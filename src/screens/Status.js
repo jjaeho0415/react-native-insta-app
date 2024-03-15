@@ -14,7 +14,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Status = ({route, navigation}) => {
   const {name, image} = route.params;
-  const statusBarHeight = getStatusBarHeight();
+  const statusBarHeight = getStatusBarHeight() + 20;
   const progress = useRef(new Animated.Value(0)).current;
   const progressAnimation = progress.interpolate({
     inputRange: [0, 5],
