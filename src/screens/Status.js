@@ -14,7 +14,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Status = ({route, navigation}) => {
   const {name, image} = route.params;
-  const statusBarHeight = getStatusBarHeight() + 20;
+  const statusBarHeight = getStatusBarHeight();
   const progress = useRef(new Animated.Value(0)).current;
   const progressAnimation = progress.interpolate({
     inputRange: [0, 5],
@@ -49,7 +49,7 @@ const Status = ({route, navigation}) => {
       <StatusBar backgroundColor="black" barStyle="light-content" />
       <View
         style={{
-          marginTop: Platform.OS === 'ios' ? statusBarHeight : 0,
+          marginTop: Platform.OS === 'ios' ? statusBarHeight + 9 : 0,
           height: 3,
           width: '100%',
           borderWidth: 1,
@@ -67,7 +67,7 @@ const Status = ({route, navigation}) => {
       </View>
       <View
         style={{
-          marginTop: Platform.OS === 'ios' ? statusBarHeight : 0,
+          marginTop: Platform.OS === 'ios' ? statusBarHeight + 9 : 0,
           padding: 15,
           flexDirection: 'row',
           alignItems: 'center',
